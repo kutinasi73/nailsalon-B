@@ -1,0 +1,723 @@
+
+:root{
+    /* フォントファミリーの定義 */
+    --ff-main: "Inter", sans-serif; /* メインの明朝体 */
+    --ff-index: "Shippori Mincho", serif; /* 補足用のゴシック体 */
+    --ff-eng:"Bodoni Moda", serif;
+    --ff-logo: "Playfair Display", serif;
+
+    /* メインフォントサイズを定義 */ /* clamp(最小, 可変, 最大) */
+    --fz-logo: clamp(48px, 15vw, 128px);
+    --fz-40: clamp(32px, 4.2vw, 40px);
+    --fz-36: clamp(24px, 3.75vw, 36px);
+    --fz-32: clamp(20px, 3.3vw, 32px);
+    --fz-24: clamp(20px, 2.5vw, 24px);
+    --fz-20: clamp(16px, 2.1vw, 20px);
+    --fz-16: clamp(14px, 1.7vw, 16px);
+    
+    /* 行間 */
+    --line-height-base: 2.0;    /* 本文・ゆったり読める */
+    --line-height-tight: 1.4;   /* 見出し・締まって見える */
+    /* 字間 */
+    --letter-spacing-base: 0.12em;  /* 本文・上品な余裕感 */
+    --letter-spacing-tight: 0.06em; /* 見出し */
+    --letter-spacing-wide: 0.2em;   /* ロゴや大見出し */
+
+    /* 色 */
+    --color-bese: #fff1f1;
+    --color-accent: #bf5a5a;
+    --color-deep:#840000;
+    --color-gradient: linear-gradient(180deg, #bf5a5a 30%, #840000 100%);
+}
+
+.eng{
+    font-family: var(--ff-eng);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: var(--letter-spacing-base);
+}
+.index{
+    font-family: var(--ff-index);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: var(--line-height-base);
+}
+.body{
+    background-color: var(--color-bese);
+    font-family: var(--ff-main);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    color: var(--color-deep);
+    font-size: var(--fz-20);
+    line-height: var(--line-height-base);
+    letter-spacing: var(--letter-spacing-base);
+}
+.inner{
+    width: 90%;
+    max-width: 960px;
+}
+/*===---CTA---===*/
+.cta{
+    width: 100%;
+    min-height: 150px;
+    background-color: var(--color-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0 0;
+}
+.cta-btn{
+    width: 100%;
+    max-width: 480px;
+    height: clamp(50px,8vw, 70px);
+    background: var(--color-gradient);
+    color: var(--color-bese);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-bese);
+    border-radius: 100px;
+    transition: 0.3s;
+    text-align: center;
+}
+.cta-btn span{
+    font-size: var(--fz-20);
+    letter-spacing: var(--letter-spacing-wide);
+    font-weight: bold;
+}
+.cta-btn:hover {
+    background: var(--color-deep);
+    color: var(--color-bese);
+}
+/*===---fv---===*/
+.fv{
+    width: 100%;
+    min-height: 900px;
+    /* 背景画像として設定 */
+    background-image: url('../images/fv-1.png');
+    background-size: cover;    /* 画像を隙間なく敷き詰める */
+    background-position: center; /* 画像の真ん中を基準にする */
+    background-repeat: no-repeat;
+    
+    /* 上下の余白をしっかり取る（これがセクションの高さになる） */
+    padding: clamp(100px, 10vw, 150px) 0 ;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.fv-inner{
+    width: 100%;
+    min-height: 900px;
+    background-image: url('../images/fv-2.png');
+    background-size: contain;    
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    font-family: var(--ff-logo);
+    letter-spacing: 1.5em;
+    line-height: var(--line-height-base);
+
+    background: var(--color-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; 
+}
+.logo span{
+    font-size: var(--fz-24);
+}
+.logo h1{
+    font-size: var(--fz-logo);
+    font-weight: 900;
+}
+
+.fv-body{
+    display: flex;
+    justify-content: space-between;
+}
+.fv-mainbox{
+    width: 50%;
+    color: var(--color-deep);
+}
+.fv-tagline{
+    font-size: var(--fz-40);
+    letter-spacing: var(--letter-spacing-wide);
+    line-height: var(--line-height-base);
+    padding-bottom: 30px;
+}
+.fv-maintxt{
+    font-size: var(--fz-32);
+    letter-spacing: var(--letter-spacing-base);
+    line-height: var(--line-height-base);
+}
+.fv-maintxt-top{
+    display:flex;
+    align-items: baseline;
+}
+.fv-tagline span ,.fv-maintxt-top span{
+    font-weight: bold;
+}
+.fv-txt{
+    font-size: var(--fz-20);
+    line-height: var(--line-height-base);
+    padding: 30px 0 100px;
+}
+.fv-vertical {
+    position: absolute;
+    top: 50%;
+    right: 15%; 
+    writing-mode: vertical-rl; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.fv-vertical-top,
+.fv-vertical-bottom {
+    background: rgba(255, 241, 241, 0.7);
+    backdrop-filter: blur(4px); /* 背景を少しぼかすと高級感アップ */
+    padding: 25px 8px;
+    font-size: var(--fz-32);
+    letter-spacing: var(--letter-spacing-wide);
+    color:var(--color-deep);
+}
+.fv-vertical-bottom{
+    position: relative;
+    top: clamp(50px,8vw,100px);
+}
+
+@media (max-width: 768px) {
+    .fv{
+        min-height: 920px;
+    }
+    .fv-inner{
+        min-height: 920px;
+        background-image: url('../images/fv-m2.png');
+        background-size: auto;    
+        background-repeat: no-repeat;
+        background-position: center top;
+        align-items: flex-start;
+        padding: 0;
+    }
+    .logo {
+        position: relative;
+        top: -50px;
+        font-family: var(--ff-logo);
+        letter-spacing: var(--letter-spacing-tight);
+        text-align: center;
+    }
+    .logo h1{
+        letter-spacing: var(--letter-spacing-wide);
+        line-height: 1.0;
+    }
+    .fv-body{
+        justify-content: flex-start;
+    }
+    .fv-mainbox{
+        width: 100%;
+        padding-top: 300px;
+    }
+    .fv-vertical {
+        top: 30%;
+        right: 60%; 
+    }
+}
+
+/*==---about---===*/
+.about{
+    width: 100%;
+    min-height: 700px;
+    /* 背景画像として設定 */
+    background-image: url('../images/about-1.png');
+    background-size: cover;    /* 画像を隙間なく敷き詰める */
+    background-position: center; /* 画像の真ん中を基準にする */
+    background-repeat: no-repeat;
+    
+    /* 上下の余白をしっかり取る（これがセクションの高さになる） */
+    padding: clamp(100px, 10vw, 150px) 0 ;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.about-inner{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.about-body{
+    width: 90%;
+    max-width: 600px;
+    padding: clamp(50px,8vw,100px) clamp(10px, 4vw, 50px);
+    background-color: rgba(255, 241, 241, 0.7);
+    color: var(--color-deep);
+}
+.about-subtxt p{
+    font-size: var(--fz-20);
+    padding-bottom: 30px;
+}
+.about-maintxt p{
+    font-size: var(--fz-20);
+    font-weight: bold;
+}
+.about-maintxt span{
+    font-size: var(--fz-32);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .about{
+        background-image: url('../images/about-m1.png');
+    }
+    .about-inner{
+        justify-content: center;
+    }
+}
+
+/*==---point---===*/
+.point{
+    width: 100%;
+    padding: clamp(100px, 10vw, 150px) 0 ;
+    background-color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.point-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(50px,8vw,100px);
+}
+.point-title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-bese);
+    font-weight: bold;
+    letter-spacing: var(--letter-spacing-wide);
+}
+.point-title span{
+    font-size: var(--fz-24);
+}
+.point-title h2{
+    font-size: var(--fz-40);
+}
+.point-body{
+    width: 100%;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 2.5vw, 30px);
+    color: var(--color-deep);
+}
+.point-box{
+    padding: 70px 20px 50px;
+    display: grid;
+    grid-template-rows: auto auto 1fr; 
+    gap: clamp(20px, 2.5vw, 30px);
+    background-color: var(--color-bese);
+    position: relative;
+}
+.point-circle{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--color-deep);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fz-16);
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-bese);
+    line-height: 1.1;
+    position: absolute;
+    top: -40px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.point-num{
+    font-size: var(--fz-36);
+}
+.point-box img{
+    width: 260px;
+    height: 182px;
+    object-fit: cover;
+}
+.point-box h3{
+    font-size: var(--fz-24);
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .point-body{
+        grid-template-columns: 1fr;
+    }
+    .point-box {
+        grid-template-areas:
+            "image  image"
+            "circle title"
+            "text   text";
+        grid-template-columns: 80px 1fr;
+        gap: 20px;
+        padding: 40px 20px; 
+        overflow: visible;
+    }
+    .point-box picture { 
+        grid-area: image;
+        width: 100%;
+    }
+    .point-box img{
+        width: 100%;
+        height: auto;
+    }
+    .point-box .point-circle { 
+        grid-area: circle; 
+        position: relative; /* PCのabsoluteを上書き */
+        top: 0;
+        left: 0; 
+        transform: none;  
+        margin-top: -30px; 
+        margin-left: -20px; 
+    }
+    .point-box h3 { 
+        grid-area: title; 
+        align-self: center;
+        line-height: var(--line-height-tight);
+        margin: -20px 0 0;
+    }
+    .point-box p { 
+        grid-area: text;
+        padding: 0 20px; 
+    }
+}
+
+
+/*==---flow---===*/
+.flow{
+    width: 100%;
+    min-height: 965px;
+    background-color: var(--color-bese);
+    /* 背景画像として設定 */
+    background-image: url('../images/flow-1.png');
+    background-size: auto 100%;    
+    background-repeat: no-repeat;
+    
+    /* 上下の余白をしっかり取る（これがセクションの高さになる） */
+    padding: clamp(100px, 10vw, 150px) 0 ;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.flow-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: clamp(50px,8vw,100px);
+}
+.flow-title{
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.flow-body{
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.flow-title h2{
+    color: var(--color-deep);
+    font-size: var(--fz-40);
+}
+.flow-title span{
+    color: var(--color-accent);
+    font-size: var(--fz-24);
+}
+.flow-box{
+    width: 100%;
+    height: 125px;
+    border: 1px solid var(--color-accent);
+    background-color: var(--color-bese);
+}
+.flow-box-top{
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-accent);
+    color: var(--color-bese);
+    font-size: var(--fz-24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flow-box-bottom{
+    color: var(--color-deep);
+    padding: 10px clamp(10px,2vw,25px);
+}
+.flow-body svg{
+    color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .flow{
+        background-image: url('../images/flow-m1.png');
+        background-size: 100% auto ; 
+        background-position: center top;
+        background-repeat: no-repeat;
+        min-height: auto;
+    }
+    .flow-inner{
+        align-items: center;
+    }
+    .flow-title{
+        align-items: flex-start;
+    }
+}
+
+/*==---menu---===*/
+.menu{
+    width: 100%;
+    padding: clamp(100px, 10vw, 150px) 0 ;
+    background-color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menu-body{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px clamp(10px, 4vw, 55px);
+}
+.menu-titlebox,.menu-box{
+    width: 100%; 
+    aspect-ratio: 455 / 190;
+    border: 1px solid var(--color-bese);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fz-40);
+    gap: 10px;
+}
+.menu-titlebox{
+    background-color: var(--color-accent);
+    color: var(--color-bese);
+}
+.menu-box{
+    background-color: var(--color-bese);
+    color: var(--color-deep);
+}
+.menu-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.menu-box h4{
+    font-size: var(--fz-36);
+    font-weight: bold;
+    text-align: center;
+}
+.menu-box span{
+    font-size: var(--fz-24);
+}
+.munu-price{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+}
+.munu-price p{
+    font-size: var(--fz-20);
+}
+.munu-price span{
+    font-size: var(--fz-40);
+    font-weight: bold;
+}
+.menu-txt{
+    font-size: var(--fz-16);
+    color: var(--color-bese);
+    text-align: end;
+    padding: 50px 0 100px;
+    margin-left: auto;
+}
+
+@media (max-width: 1024px) {
+    .menu-body {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+        padding: 0 15px; 
+    }
+
+    .menu-titlebox,
+    .menu-box {
+        aspect-ratio: 1 / 1; 
+        padding: 5px;
+    }
+    .munu-price{
+        gap: 1px;
+    }
+}
+@media (max-width: 500px) {
+    .menu-titlebox{font-size: 20px;}
+    .menu-box h4,.menu-box span,.menu-price span{font-size: 14px;}
+    .menu-price p,.menu-txt{font-size: 10px;}
+}
+
+/*==---info---===*/
+.info{
+    width: 100%;
+    padding: clamp(100px, 10vw, 150px) 0 ;
+    background-color: var(--color-bese);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-deep);
+    gap: clamp(50px,8vw,100px);
+}
+.info-title{
+    font-size: var(--fz-40);
+    font-weight: bold;
+}
+.info-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+.info-img{
+    width: 100%;
+    max-width: 480px;
+    min-height: 290px;
+    object-fit: cover;
+}
+.info-box{
+    text-align: center;
+}
+.info-box h3{
+    font-size: var(--fz-24);
+    font-weight: bold;
+}
+.info-txtbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fz-20);
+    gap: 20px;
+    padding: 30px 0;
+}
+.info-box span{
+    font-size: var(--fz-16);
+}
+
+@media (max-width: 768px) {
+    .info-body{
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+    }
+    .info-img{
+        max-width: 360px;
+        min-height: 130px;
+    }
+    .info-txtbox{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/*===---last---===*/
+.last{
+    width: 100%;
+    min-height: 900px;
+    /* 背景画像として設定 */
+    background-image: url('../images/last-1.png');
+    background-size: cover;    /* 画像を隙間なく敷き詰める */
+    background-position: center; /* 画像の真ん中を基準にする */
+    background-repeat: no-repeat;
+    
+    /* 上下の余白をしっかり取る（これがセクションの高さになる） */
+    padding: clamp(100px, 10vw, 150px) 0  0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-bese);
+    letter-spacing: var(--letter-spacing-wide);
+}
+.last-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: clamp(40px,4vw,50px);
+}
+.last-txt{
+    font-size: var(--fz-32);
+}
+.last-tagline{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    font-size: var(--fz-32);
+}
+.last-tagline span{
+    font-size: var(--fz-36);
+    font-weight: bold;
+}
+.last-maintxt{
+    font-size: var(--fz-40);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .last{
+        min-height: 630px;
+        background-image: url('../images/last-m1.png');
+    }
+    .last-tagline{
+        padding-bottom: 120px;
+    }
+}
